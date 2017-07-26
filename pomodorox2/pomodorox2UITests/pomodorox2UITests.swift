@@ -1,14 +1,14 @@
 //
-//  accelerometertestUITests.swift
-//  accelerometertestUITests
+//  pomodorox2UITests.swift
+//  pomodorox2UITests
 //
-//  Created by Sean Le on 7/19/17.
+//  Created by Sean Le on 7/20/17.
 //  Copyright © 2017 Sean Le. All rights reserved.
 //
 
 import XCTest
 
-class accelerometertestUITests: XCTestCase {
+class pomodorox2UITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

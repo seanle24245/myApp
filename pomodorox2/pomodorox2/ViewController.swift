@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  accelerometertest
+//  pomodorox2
 //
-//  Created by Sean Le on 7/19/17.
+//  Created by Sean Le on 7/20/17.
 //  Copyright © 2017 Sean Le. All rights reserved.
 //
 

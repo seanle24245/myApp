@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AC9042831F1FF0E90056D33D"
-               BuildableName = "accelerometertest.app"
-               BlueprintName = "accelerometertest"
-               ReferencedContainer = "container:accelerometertest.xcodeproj">
+               BlueprintIdentifier = "AC29F41C1F20E621001E9658"
+               BuildableName = "pomodorox2.app"
+               BlueprintName = "pomodorox2"
+               ReferencedContainer = "container:pomodorox2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AC9042971F1FF0E90056D33D"
-               BuildableName = "accelerometertestTests.xctest"
-               BlueprintName = "accelerometertestTests"
-               ReferencedContainer = "container:accelerometertest.xcodeproj">
+               BlueprintIdentifier = "AC29F4301F20E621001E9658"
+               BuildableName = "pomodorox2Tests.xctest"
+               BlueprintName = "pomodorox2Tests"
+               ReferencedContainer = "container:pomodorox2.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AC9042A21F1FF0E90056D33D"
-               BuildableName = "accelerometertestUITests.xctest"
-               BlueprintName = "accelerometertestUITests"
-               ReferencedContainer = "container:accelerometertest.xcodeproj">
+               BlueprintIdentifier = "AC29F43B1F20E621001E9658"
+               BuildableName = "pomodorox2UITests.xctest"
+               BlueprintName = "pomodorox2UITests"
+               ReferencedContainer = "container:pomodorox2.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AC9042831F1FF0E90056D33D"
-            BuildableName = "accelerometertest.app"
-            BlueprintName = "accelerometertest"
-            ReferencedContainer = "container:accelerometertest.xcodeproj">
+            BlueprintIdentifier = "AC29F41C1F20E621001E9658"
+            BuildableName = "pomodorox2.app"
+            BlueprintName = "pomodorox2"
+            ReferencedContainer = "container:pomodorox2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AC9042831F1FF0E90056D33D"
-            BuildableName = "accelerometertest.app"
-            BlueprintName = "accelerometertest"
-            ReferencedContainer = "container:accelerometertest.xcodeproj">
+            BlueprintIdentifier = "AC29F41C1F20E621001E9658"
+            BuildableName = "pomodorox2.app"
+            BlueprintName = "pomodorox2"
+            ReferencedContainer = "container:pomodorox2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AC9042831F1FF0E90056D33D"
-            BuildableName = "accelerometertest.app"
-            BlueprintName = "accelerometertest"
-            ReferencedContainer = "container:accelerometertest.xcodeproj">
+            BlueprintIdentifier = "AC29F41C1F20E621001E9658"
+            BuildableName = "pomodorox2.app"
+            BlueprintName = "pomodorox2"
+            ReferencedContainer = "container:pomodorox2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

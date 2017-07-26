@@ -1,15 +1,15 @@
 //
-//  accelerometertestTests.swift
-//  accelerometertestTests
+//  pomodorox2Tests.swift
+//  pomodorox2Tests
 //
-//  Created by Sean Le on 7/19/17.
+//  Created by Sean Le on 7/20/17.
 //  Copyright © 2017 Sean Le. All rights reserved.
 //
 
 import XCTest
-@testable import accelerometertest
+@testable import pomodorox2
 
-class accelerometertestTests: XCTestCase {
+class pomodorox2Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()

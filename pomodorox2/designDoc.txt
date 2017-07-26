@@ -1,0 +1,91 @@
+## Table of Contents
+  * [App Design](#app-design)
+    * [Objective](#objective)
+    * [Audience](#audience)
+    * [Experience](#experience)
+  * [Technical](#technical)
+    * [Screens](#Screens)
+    * [External services](#external-services)
+    * [Views, View Controllers, and other Classes](#Views-View-Controllers-and-other-Classes)
+  * [MVP Milestones](#mvp-milestones)
+    * [Week 1](#week-1)
+    * [Week 2](#week-2)
+    * [Week 3](#week-3)
+    * [Week 4](#week-4)
+    * [Week 5](#week-5)
+    * [Week 6](#week-6)
+
+---
+
+### App Design
+
+#### Objective
+To allow users to study more efficiently using a customizable pomodoro timer with the added benefit of a period where users must log what they've learned through either audio
+or video, as the best way to learn is to be able to explain and articulate the subject.  Users would be able to view all of their learning logs to see what they've learned by
+the hour.  Users could make categories so they can also see how much time they are spending on each subject.  Audio logging is preffered as speaking/teaching a subject is 
+a great way to learn. users can rate study sessions on how focused/productive they were.
+
+#### Audience
+
+Students primarily, but anyone who needs to focus on a subject (usually content heavy subjects) and would get help from being more organized with studying.  Anyone who has trouble focusing for an extended amount of time.  Anyone who doesn't have a way of tracking what they've learned.
+
+#### Experience
+
+Users will just start the app by clicking on the start button and will continue the process of focusing, recording, and breaking until they'd like to stop.  Users could open the app whenever they want to see their study logs and progress with efficient studying.
+
+[Back to top ^](#)
+
+---
+
+### Technical
+
+#### Screens
+-Total of 3 timer screens, one for focus, one for logging, and one for resting.  
+-One screen for customizing the timer settings
+-One calendar screen to go to log dates
+-one makeschool "notes"-like screen to view individual logs and audio
+
+#### External services
+-Coredata to store logs?
+
+#### Views, View Controllers, and other Classes
+* All 3 timer views, one table view for the log, one view for settings, one calendar 
+  
+* View Controllers
+  * One view controller
+* Other Classes
+  * User class that stores text and audio logs and timestamps
+
+#### Data models
+*  N/A
+
+[Back to top ^](#)
+
+---
+
+### MVP Milestones
+[The overall milestones of first usable build, core features, and polish are just suggestions, plan to finish earlier if possible. The last 20% of work tends to take about as much time as the first 80% so do not slack off on your milestones!]
+
+#### Week 1
+_planning your app_
+* Come up with an idea
+
+#### Week 2
+_finishing a usable build_
+* Finish UI
+
+#### Week 3
+* Create classes
+
+#### Week 4
+* Finish timers
+
+#### Week 5
+_starting the polish_
+* Finish audio logger and scrubber
+
+#### Week 6
+_submitting to the App Store_
+* Polish everything
+
+[Back to top ^](#)

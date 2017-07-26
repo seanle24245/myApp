@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>accelerometertest.xcscheme</key>
+		<key>pomodorox2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>AC9042831F1FF0E90056D33D</key>
+		<key>AC29F41C1F20E621001E9658</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC9042971F1FF0E90056D33D</key>
+		<key>AC29F4301F20E621001E9658</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC9042A21F1FF0E90056D33D</key>
+		<key>AC29F43B1F20E621001E9658</key>
 		<dict>
 			<key>primary</key>
 			<true/>
