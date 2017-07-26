@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "BluePlayButton.pdf",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "BluePlayButton.pdf",
       "scale" : "2x"
     },
     {
