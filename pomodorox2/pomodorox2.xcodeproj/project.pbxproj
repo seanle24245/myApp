@@ -14,6 +14,7 @@
 		AC29F42B1F20E621001E9658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29F4291F20E621001E9658 /* LaunchScreen.storyboard */; };
 		AC29F4361F20E621001E9658 /* pomodorox2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4351F20E621001E9658 /* pomodorox2Tests.swift */; };
 		AC29F4411F20E621001E9658 /* pomodorox2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4401F20E621001E9658 /* pomodorox2UITests.swift */; };
+		AC31D5F41F2A4A96009674CD /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5F31F2A4A96009674CD /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		AC29F43C1F20E621001E9658 /* pomodorox2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pomodorox2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC29F4401F20E621001E9658 /* pomodorox2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pomodorox2UITests.swift; sourceTree = "<group>"; };
 		AC29F4421F20E621001E9658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC31D5F31F2A4A96009674CD /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		AC29F4141F20E621001E9658 = {
 			isa = PBXGroup;
 			children = (
+				AC31D5F51F2A4AD6009674CD /* Models */,
 				AC29F41F1F20E621001E9658 /* pomodorox2 */,
 				AC29F4341F20E621001E9658 /* pomodorox2Tests */,
 				AC29F43F1F20E621001E9658 /* pomodorox2UITests */,
@@ -123,6 +126,14 @@
 				AC29F4421F20E621001E9658 /* Info.plist */,
 			);
 			path = pomodorox2UITests;
+			sourceTree = "<group>";
+		};
+		AC31D5F51F2A4AD6009674CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC31D5F31F2A4A96009674CD /* Log.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			files = (
 				AC29F4231F20E621001E9658 /* ViewController.swift in Sources */,
 				AC29F4211F20E621001E9658 /* AppDelegate.swift in Sources */,
+				AC31D5F41F2A4A96009674CD /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +519,7 @@
 				AC29F4471F20E621001E9658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC29F4481F20E621001E9658 /* Build configuration list for PBXNativeTarget "pomodorox2Tests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +528,7 @@
 				AC29F44A1F20E621001E9658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC29F44B1F20E621001E9658 /* Build configuration list for PBXNativeTarget "pomodorox2UITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +537,7 @@
 				AC29F44D1F20E621001E9658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
