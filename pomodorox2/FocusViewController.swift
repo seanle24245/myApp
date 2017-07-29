@@ -60,7 +60,8 @@ class FocusViewController: UIViewController {
         if totalSeconds==0{
             timer.invalidate()
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-            totalSeconds=0
+            self.performSegue(withIdentifier: "focusToLog", sender: self)
+        
         }
         
         
