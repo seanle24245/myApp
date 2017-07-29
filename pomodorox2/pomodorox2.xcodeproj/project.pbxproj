@@ -15,6 +15,7 @@
 		AC29F4361F20E621001E9658 /* pomodorox2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4351F20E621001E9658 /* pomodorox2Tests.swift */; };
 		AC29F4411F20E621001E9658 /* pomodorox2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4401F20E621001E9658 /* pomodorox2UITests.swift */; };
 		AC31D5F41F2A4A96009674CD /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5F31F2A4A96009674CD /* Log.swift */; };
+		AC31D5F91F2BB38D009674CD /* FocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5F81F2BB38D009674CD /* FocusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AC29F4401F20E621001E9658 /* pomodorox2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pomodorox2UITests.swift; sourceTree = "<group>"; };
 		AC29F4421F20E621001E9658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC31D5F31F2A4A96009674CD /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		AC31D5F81F2BB38D009674CD /* FocusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		AC29F4141F20E621001E9658 = {
 			isa = PBXGroup;
 			children = (
+				AC31D5FA1F2BB551009674CD /* Controllers */,
 				AC31D5F51F2A4AD6009674CD /* Models */,
 				AC29F41F1F20E621001E9658 /* pomodorox2 */,
 				AC29F4341F20E621001E9658 /* pomodorox2Tests */,
@@ -134,6 +137,14 @@
 				AC31D5F31F2A4A96009674CD /* Log.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		AC31D5FA1F2BB551009674CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC31D5F81F2BB38D009674CD /* FocusViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC29F4231F20E621001E9658 /* ViewController.swift in Sources */,
+				AC31D5F91F2BB38D009674CD /* FocusViewController.swift in Sources */,
 				AC29F4211F20E621001E9658 /* AppDelegate.swift in Sources */,
 				AC31D5F41F2A4A96009674CD /* Log.swift in Sources */,
 			);

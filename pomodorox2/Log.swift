@@ -14,12 +14,15 @@ class Log{
     var textContent:String?
     var audioContent:AVAudioFile?
     var entryTime:Date
+    var subject:String?
 
-    init(logEntry:String?,logTime:Date, audio:AVAudioFile?){
+    init(logEntry:String?,logTime:Date, audio:AVAudioFile?, subjectEntry:String?){
         
-        textContent=logEntry
+        let emptyString:String = ""
+        subject=subjectEntry ?? emptyString
+        textContent=logEntry ?? emptyString
         entryTime=logTime
-        audioContent=audio
+        audioContent=audio ?? nil
         
         
     }
