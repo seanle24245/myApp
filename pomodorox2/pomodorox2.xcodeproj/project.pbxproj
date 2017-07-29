@@ -16,6 +16,7 @@
 		AC29F4411F20E621001E9658 /* pomodorox2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4401F20E621001E9658 /* pomodorox2UITests.swift */; };
 		AC31D5F41F2A4A96009674CD /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5F31F2A4A96009674CD /* Log.swift */; };
 		AC31D5F91F2BB38D009674CD /* FocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5F81F2BB38D009674CD /* FocusViewController.swift */; };
+		AC31D5FC1F2D07F7009674CD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5FB1F2D07F7009674CD /* LogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		AC29F4421F20E621001E9658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC31D5F31F2A4A96009674CD /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		AC31D5F81F2BB38D009674CD /* FocusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusViewController.swift; sourceTree = "<group>"; };
+		AC31D5FB1F2D07F7009674CD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				AC31D5F81F2BB38D009674CD /* FocusViewController.swift */,
+				AC31D5FB1F2D07F7009674CD /* LogViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC29F4231F20E621001E9658 /* ViewController.swift in Sources */,
+				AC31D5FC1F2D07F7009674CD /* LogViewController.swift in Sources */,
 				AC31D5F91F2BB38D009674CD /* FocusViewController.swift in Sources */,
 				AC29F4211F20E621001E9658 /* AppDelegate.swift in Sources */,
 				AC31D5F41F2A4A96009674CD /* Log.swift in Sources */,

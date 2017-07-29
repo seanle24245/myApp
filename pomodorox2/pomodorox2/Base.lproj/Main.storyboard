@@ -23,13 +23,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccc-aJ-KQZ">
-                                <rect key="frame" x="99" y="191.5" width="177" height="78"/>
+                                <rect key="frame" x="99" y="147.5" width="177" height="78"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="57"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXq-Yf-EfD">
+                                <rect key="frame" x="171" y="96" width="33" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6y-bh-cUX">
+                                <rect key="frame" x="133" y="497" width="109" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIS-Fp-C6V">
+                                <rect key="frame" x="133" y="566" width="109" height="66"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud2-lT-kIh">
+                                <rect key="frame" x="66" y="336" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7uJ-hZ-xUe"/>
+                                    <constraint firstAttribute="height" constant="100" id="vd0-jI-QrH"/>
+                                </constraints>
+                                <state key="normal" image="BluePlayButton"/>
+                                <connections>
+                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O5N-8x-OeN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zm3-bT-9B7">
+                                <rect key="frame" x="209" y="336" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="few-Zl-igQ"/>
+                                    <constraint firstAttribute="height" constant="100" id="gMA-BS-mnb"/>
+                                </constraints>
+                                <state key="normal" image="BluePauseButton"/>
+                                <connections>
+                                    <action selector="pauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h79-aK-Dd6"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jj9-6U-6A0">
+                                <rect key="frame" x="85" y="274" width="205" height="2"/>
+                            </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJr-L9-Yc0">
-                                <rect key="frame" x="0.0" y="72" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pomodoro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAi-W8-bsc">
                                         <rect key="frame" x="126" y="14" width="123" height="21"/>
@@ -59,49 +102,6 @@
                                     <constraint firstItem="LAi-W8-bsc" firstAttribute="leading" secondItem="iJr-L9-Yc0" secondAttribute="leading" constant="126" id="hKW-wI-iUa"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXq-Yf-EfD">
-                                <rect key="frame" x="171" y="140" width="33" height="16.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6y-bh-cUX">
-                                <rect key="frame" x="133" y="541" width="109" height="33"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIS-Fp-C6V">
-                                <rect key="frame" x="133" y="610" width="109" height="66"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud2-lT-kIh">
-                                <rect key="frame" x="66" y="380" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="7uJ-hZ-xUe"/>
-                                    <constraint firstAttribute="height" constant="100" id="vd0-jI-QrH"/>
-                                </constraints>
-                                <state key="normal" image="BluePlayButton"/>
-                                <connections>
-                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O5N-8x-OeN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zm3-bT-9B7">
-                                <rect key="frame" x="209" y="380" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="few-Zl-igQ"/>
-                                    <constraint firstAttribute="height" constant="100" id="gMA-BS-mnb"/>
-                                </constraints>
-                                <state key="normal" image="BluePauseButton"/>
-                                <connections>
-                                    <action selector="pauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h79-aK-Dd6"/>
-                                </connections>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jj9-6U-6A0">
-                                <rect key="frame" x="85" y="318" width="205" height="2"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -132,8 +132,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rb5-6B-bDr"/>
                     <connections>
+                        <outlet property="focusProgressBar" destination="Jj9-6U-6A0" id="u4P-fG-TaB"/>
                         <outlet property="focusTimeLabel" destination="Ccc-aJ-KQZ" id="moD-Ua-YAD"/>
-                        <segue destination="SV6-0b-dRf" kind="show" identifier="segueTest" id="0ff-Y7-sLR"/>
+                        <segue destination="SV6-0b-dRf" kind="show" identifier="focusToLog" id="0ff-Y7-sLR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -262,7 +263,7 @@
         <!--Log View Controller-->
         <scene sceneID="aqn-gd-Gzb">
             <objects>
-                <viewController storyboardIdentifier="LogViewController" id="SV6-0b-dRf" customClass="LogViewController" customModule="pomodorox2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SV6-0b-dRf" customClass="LogViewController" customModule="pomodorox2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cqv-tH-ThE"/>
                         <viewControllerLayoutGuide type="bottom" id="b7S-24-7cn"/>
@@ -322,6 +323,9 @@
                                     <constraint firstAttribute="height" constant="50" id="PHa-CV-hoH"/>
                                 </constraints>
                                 <state key="normal" image="BluePauseButton"/>
+                                <connections>
+                                    <action selector="logPauseButton:" destination="SV6-0b-dRf" eventType="touchUpInside" id="RXh-EE-R6P"/>
+                                </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EPY-R6-8oo">
                                 <rect key="frame" x="85" y="166.5" width="205" height="2"/>
@@ -333,6 +337,9 @@
                                     <constraint firstAttribute="height" constant="50" id="vzF-Zb-qKO"/>
                                 </constraints>
                                 <state key="normal" image="BluePlayButton"/>
+                                <connections>
+                                    <action selector="logStartButton:" destination="SV6-0b-dRf" eventType="touchUpInside" id="knU-By-0hW"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="60d-CA-qR7">
                                 <rect key="frame" x="16" y="188" width="343" height="325"/>
@@ -377,6 +384,10 @@
                             <constraint firstItem="oQB-oa-EWc" firstAttribute="top" secondItem="cjc-ww-dDg" secondAttribute="bottom" constant="20" id="zbD-eU-I6U"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logProgressBar" destination="EPY-R6-8oo" id="0Fu-bL-f6f"/>
+                        <outlet property="logTimeLabel" destination="GbJ-Pc-CTH" id="S8u-uU-Ue6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4o1-ON-DMr" sceneMemberID="firstResponder"/>
             </objects>
