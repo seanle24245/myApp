@@ -20,26 +20,16 @@ class FocusViewController: UIViewController {
     @IBOutlet weak var focusTimeLabel: UILabel!
     @IBOutlet weak var focusProgressBar: UIProgressView!
     
-    
-    
-    
     @IBAction func startButton(_ sender: Any) {
         
         if timerIsOn == false{
-            
-        
-        
         timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(FocusViewController.updateTimer)), userInfo: nil, repeats: true)
             timerIsOn=true
         }
-        
     }
-    
     
     @IBAction func pauseButton(_ sender: Any) {
         timer.invalidate()
-        
-       
         focusTimeLabel.text="\(minutesToDisplay)"+":"+"\(secondsToDisplay)"
         timerIsOn=false
     }
@@ -48,9 +38,7 @@ class FocusViewController: UIViewController {
         totalSeconds-=1
         secondsToDisplay=totalSeconds%60
         minutesToDisplay=totalSeconds/60
-        
-       
-        
+
         if secondsToDisplay<10{
             focusTimeLabel.text="\(minutesToDisplay)" + ":" + "0"+"\(secondsToDisplay)"
         }
@@ -62,7 +50,6 @@ class FocusViewController: UIViewController {
             timer.invalidate()
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
             self.performSegue(withIdentifier: "focusToLog", sender: self)
-        
         }
         
         let toIncrementProgress:Float=1/(Float)(initialTime)
