@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LogViewController.swift"
-            timestampString = "523201985.882522"
+            timestampString = "523220363.511871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "setUpRecorder()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LogViewController.swift"
-            timestampString = "523201985.882522"
+            timestampString = "523220363.511871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "setUpRecorder()"
             landmarkType = "7">
          </BreakpointContent>

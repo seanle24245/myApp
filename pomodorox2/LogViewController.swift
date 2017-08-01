@@ -28,6 +28,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     var timerIsOn:Bool=false
     var minutesToDisplay:Int=0
     var secondsToDisplay:Int=0
+    var isRecording:Bool=false
     @IBOutlet weak var logTimeLabel: UILabel!
     @IBOutlet weak var logProgressBar: UIProgressView!
     
@@ -61,6 +62,13 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         totalSeconds-=1
         secondsToDisplay=totalSeconds%60
         minutesToDisplay=totalSeconds/60
+        if totalSeconds==1{
+            if isRecording{
+                soundRecorder.stop()
+            }
+            
+            let recording = try? AVAudioFile(forReading: getFileUrl())
+        }
 
         if secondsToDisplay<10{
             logTimeLabel.text="\(minutesToDisplay)" + ":" + "0"+"\(secondsToDisplay)"
@@ -72,13 +80,17 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         if totalSeconds==0{
             timer.invalidate()
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+            self.performSegue(withIdentifier: "logToRest", sender: self)
         }
         let toIncrementProgress:Float=1/(Float)(initialTime)
         logProgressBar.progress+=toIncrementProgress
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(FocusViewController.updateTimer)), userInfo: nil, repeats: true)
+        timerIsOn=true
         setUpRecorder()
     }
     
@@ -87,6 +99,24 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     }
     
     //recording stuff
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    
+    
+    
+    
+    
     
     func setUpRecorder(){
         let recordSettings=[AVFormatIDKey:kAudioFormatAppleLossless,
@@ -98,7 +128,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         
         
         
-        //soundRecorder=AVAudioRecorder(url: getFileUrl(), settings: recordSettings as [NSObject:AnyObject],error: &error)
+        
         soundRecorder = try! AVAudioRecorder(url: getFileUrl(), settings: recordSettings)
         
         
@@ -123,6 +153,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         if sender.titleLabel?.text == "Record" {
             
             soundRecorder.record()
+            isRecording=true
             sender.setTitle("Stop", for:.normal)
             logRecordButton.isEnabled=true
         }
@@ -130,6 +161,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
             soundRecorder.stop()
             sender.setTitle("Record", for:.normal)
             logRecordButton.isEnabled=false
+            isRecording=false
         }
     }
     
