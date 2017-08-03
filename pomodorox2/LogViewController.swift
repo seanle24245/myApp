@@ -32,6 +32,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     @IBOutlet weak var logTimeLabel: UILabel!
     @IBOutlet weak var logProgressBar: UIProgressView!
     
+    @IBOutlet weak var logTextView: UITextView!
     @IBOutlet weak var logRecordButton: UIButton!
     
     @IBOutlet weak var playTestButton: UIButton!
@@ -58,16 +59,19 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
 
     
     
-    func updateTimer(){
-        totalSeconds-=1
+    func updateTimer() {
+        totalSeconds -= 1
         secondsToDisplay=totalSeconds%60
         minutesToDisplay=totalSeconds/60
-        if totalSeconds==1{
+        if totalSeconds==1 {
             if isRecording{
                 soundRecorder.stop()
+                let recording = try? AVAudioFile(forReading: getFileUrl())
+                CoreDataHelper.addLog(text: logTextView.text, audio: recording, subject: nil)
+                
             }
             
-            let recording = try? AVAudioFile(forReading: getFileUrl())
+            
         }
 
         if secondsToDisplay<10{
@@ -89,6 +93,9 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
         timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(FocusViewController.updateTimer)), userInfo: nil, repeats: true)
         timerIsOn=true
         setUpRecorder()
@@ -112,7 +119,6 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     //
     //
     //
-    
     
     
     

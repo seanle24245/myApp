@@ -31,6 +31,7 @@ class LoggedCell: UITableViewCell {
     
     
     @IBAction func startLoggedAudio(_ sender: Any) {
+        
     }
     
     

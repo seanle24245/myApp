@@ -14,13 +14,14 @@
 		AC29F42B1F20E621001E9658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29F4291F20E621001E9658 /* LaunchScreen.storyboard */; };
 		AC29F4361F20E621001E9658 /* pomodorox2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4351F20E621001E9658 /* pomodorox2Tests.swift */; };
 		AC29F4411F20E621001E9658 /* pomodorox2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4401F20E621001E9658 /* pomodorox2UITests.swift */; };
-		AC31D5F41F2A4A96009674CD /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5F31F2A4A96009674CD /* Log.swift */; };
 		AC31D5F91F2BB38D009674CD /* FocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5F81F2BB38D009674CD /* FocusViewController.swift */; };
 		AC31D5FC1F2D07F7009674CD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5FB1F2D07F7009674CD /* LogViewController.swift */; };
 		AC31D5FE1F2FA91F009674CD /* RestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D5FD1F2FA91F009674CD /* RestViewController.swift */; };
 		AC31D6021F2FCE22009674CD /* LoggedValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D6011F2FCE22009674CD /* LoggedValuesViewController.swift */; };
 		AC31D6041F2FCECF009674CD /* LoggedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D6031F2FCECF009674CD /* LoggedCell.swift */; };
 		AC31D6081F30D994009674CD /* log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC31D6061F30D994009674CD /* log.xcdatamodeld */; };
+		AC31D60B1F3100CA009674CD /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D60A1F3100CA009674CD /* CoreDataHelper.swift */; };
+		AC31D60D1F335619009674CD /* StoredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D60C1F335619009674CD /* StoredViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +55,14 @@
 		AC29F43C1F20E621001E9658 /* pomodorox2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pomodorox2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC29F4401F20E621001E9658 /* pomodorox2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pomodorox2UITests.swift; sourceTree = "<group>"; };
 		AC29F4421F20E621001E9658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC31D5F31F2A4A96009674CD /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		AC31D5F81F2BB38D009674CD /* FocusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusViewController.swift; sourceTree = "<group>"; };
 		AC31D5FB1F2D07F7009674CD /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		AC31D5FD1F2FA91F009674CD /* RestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestViewController.swift; sourceTree = "<group>"; };
 		AC31D6011F2FCE22009674CD /* LoggedValuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedValuesViewController.swift; sourceTree = "<group>"; };
 		AC31D6031F2FCECF009674CD /* LoggedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedCell.swift; sourceTree = "<group>"; };
 		AC31D6071F30D994009674CD /* log.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = log.xcdatamodel; sourceTree = "<group>"; };
+		AC31D60A1F3100CA009674CD /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		AC31D60C1F335619009674CD /* StoredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		AC29F4141F20E621001E9658 = {
 			isa = PBXGroup;
 			children = (
+				AC31D6091F3100A9009674CD /* Helpers */,
 				AC31D6051F30C6B1009674CD /* Views */,
 				AC31D5FA1F2BB551009674CD /* Controllers */,
 				AC31D5F51F2A4AD6009674CD /* Models */,
@@ -145,7 +148,6 @@
 		AC31D5F51F2A4AD6009674CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AC31D5F31F2A4A96009674CD /* Log.swift */,
 				AC31D6061F30D994009674CD /* log.xcdatamodeld */,
 			);
 			name = Models;
@@ -158,6 +160,7 @@
 				AC31D5FB1F2D07F7009674CD /* LogViewController.swift */,
 				AC31D5FD1F2FA91F009674CD /* RestViewController.swift */,
 				AC31D6011F2FCE22009674CD /* LoggedValuesViewController.swift */,
+				AC31D60C1F335619009674CD /* StoredViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +172,14 @@
 			);
 			name = Views;
 			path = pomodorox2;
+			sourceTree = "<group>";
+		};
+		AC31D6091F3100A9009674CD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AC31D60A1F3100CA009674CD /* CoreDataHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC31D60B1F3100CA009674CD /* CoreDataHelper.swift in Sources */,
+				AC31D60D1F335619009674CD /* StoredViewController.swift in Sources */,
 				AC29F4231F20E621001E9658 /* ViewController.swift in Sources */,
 				AC31D5FC1F2D07F7009674CD /* LogViewController.swift in Sources */,
 				AC31D6021F2FCE22009674CD /* LoggedValuesViewController.swift in Sources */,
@@ -313,7 +326,6 @@
 				AC31D6081F30D994009674CD /* log.xcdatamodeld in Sources */,
 				AC31D6041F2FCECF009674CD /* LoggedCell.swift in Sources */,
 				AC31D5FE1F2FA91F009674CD /* RestViewController.swift in Sources */,
-				AC31D5F41F2A4A96009674CD /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
