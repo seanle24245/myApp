@@ -21,22 +21,27 @@ class CoreDataHelper {
     
     
     
-    static func addLog(text:String, audio: AVAudioFile?, subject: String?){
+    
+    static func addLog(text:String?, id: String?, subject: String?){
         
         let dateToLog = Date()
         
         let newLog = NSEntityDescription.insertNewObject(forEntityName: "Log", into: context) as! Log
         
-        newLog.setValue("dateToLog", forKey: "date")
-        newLog.setValue("audio", forKey: "audioLog")
-        newLog.setValue("text", forKey: "textLog")
-        newLog.setValue("subject", forKey: "subjectLine")
+        ///newLog.setValue("dateToLog, forKey: "date")
+        //newLog.setValue(audio, forKey: "audioLog")
+        //newLog.setValue("text", forKey: "textLog")
+        //newLog.setValue("subject", forKey: "subjectLine")
+        
+        newLog.audioUIUD = id
+        newLog.subjectLine = subject
+        newLog.date = dateToLog as NSDate
+        newLog.textLog = text
         
         
-        do{
             saveLog()
             print("saved")
-        }
+        
         
         
     }

@@ -26,14 +26,7 @@ class LoggedValuesViewController: UIViewController {
         super.viewDidLoad()
         logs = CoreDataHelper.getContents()
         // Do any additional setup after loading the view.
-        
-        
-        
-        
-        
-        
-        
-        
+   
         
     }
 

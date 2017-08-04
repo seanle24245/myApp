@@ -23,8 +23,8 @@ import AVFoundation
 class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDelegate {
     
     var timer:Timer=Timer()
-    var totalSeconds:Int=5
-    var initialTime:Int=5
+    var totalSeconds:Int=10
+    var initialTime:Int=10
     var timerIsOn:Bool=false
     var minutesToDisplay:Int=0
     var secondsToDisplay:Int=0
@@ -38,7 +38,8 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     @IBOutlet weak var playTestButton: UIButton!
     var soundRecorder : AVAudioRecorder!
     var soundPlayer : AVAudioPlayer!
-    var filename:String = "audiofile.m4a"
+    
+    let uiud:String = UUID().uuidString
     
     
     @IBAction func logStartButton(_ sender: Any) {
@@ -65,9 +66,11 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         minutesToDisplay=totalSeconds/60
         if totalSeconds==1 {
             if isRecording{
+                let filename = "\(uiud) + .m4a"
                 soundRecorder.stop()
                 let recording = try? AVAudioFile(forReading: getFileUrl())
-                CoreDataHelper.addLog(text: logTextView.text, audio: recording, subject: nil)
+                CoreDataHelper.addLog(text: logTextView.text, id: filename, subject: "subjectest")
+                let stuff = CoreDataHelper.getContents()
                 
             }
             
@@ -90,6 +93,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         logProgressBar.progress+=toIncrementProgress
         
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,6 +154,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     }
     
     func getFileUrl() -> URL{
+        let filename = "\(uiud) + .m4a"
         var url = URL(string: getCacheDirectory())!
         url = url.appendingPathComponent(filename)
         return url
