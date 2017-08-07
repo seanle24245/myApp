@@ -45,6 +45,10 @@ extension LoggedValuesViewController: UITableViewDataSource {
         return 1
     }
     
+//    @IBAction func unwindToListNotesViewController(_ segue: UIStoryboardSegue){
+//        self.logs = CoreDataHelper.getContents()
+//    }
+//    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return logs.count
     }
@@ -69,11 +73,33 @@ extension LoggedValuesViewController: UITableViewDataSource {
         
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let identifier = segue.identifier {
+//            if identifier == "displayLog" {
+//                print("Table view cell tapped")
+//                let indexPath = tableView.indexPathForSelectedRow!
+//                // 2
+//                let log = logs[indexPath.row]
+//                // 3
+//                let displayLogViewController = segue.destination as! StoredViewController
+//                // 4
+//                displayLogViewController.log = log
+//            }
+//        }
+//    }
     
     
     
 }
 
+extension LoggedValuesViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Stored", bundle: nil).instantiateInitialViewController() as! StoredViewController
+        vc.log = self.logs[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
 
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1823001F38B49A009E1BC9 /* Stored.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1822FE1F38B49A009E1BC9 /* Stored.storyboard */; };
 		AC29F4211F20E621001E9658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4201F20E621001E9658 /* AppDelegate.swift */; };
 		AC29F4231F20E621001E9658 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4221F20E621001E9658 /* ViewController.swift */; };
 		AC29F4261F20E621001E9658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29F4241F20E621001E9658 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC1822FF1F38B49A009E1BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stored.storyboard; sourceTree = "<group>"; };
 		AC29F41D1F20E621001E9658 /* pomodorox2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomodorox2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC29F4201F20E621001E9658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC29F4221F20E621001E9658 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				AC29F4201F20E621001E9658 /* AppDelegate.swift */,
 				AC29F4221F20E621001E9658 /* ViewController.swift */,
 				AC29F4241F20E621001E9658 /* Main.storyboard */,
+				AC1822FE1F38B49A009E1BC9 /* Stored.storyboard */,
 				AC29F4271F20E621001E9658 /* Assets.xcassets */,
 				AC29F4291F20E621001E9658 /* LaunchScreen.storyboard */,
 				AC29F42C1F20E621001E9658 /* Info.plist */,
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC29F42B1F20E621001E9658 /* LaunchScreen.storyboard in Resources */,
+				AC1823001F38B49A009E1BC9 /* Stored.storyboard in Resources */,
 				AC29F4281F20E621001E9658 /* Assets.xcassets in Resources */,
 				AC29F4261F20E621001E9658 /* Main.storyboard in Resources */,
 			);
@@ -361,6 +365,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AC1822FE1F38B49A009E1BC9 /* Stored.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC1822FF1F38B49A009E1BC9 /* Base */,
+			);
+			name = Stored.storyboard;
+			sourceTree = "<group>";
+		};
 		AC29F4241F20E621001E9658 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
