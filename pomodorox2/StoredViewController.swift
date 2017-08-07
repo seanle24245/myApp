@@ -21,6 +21,9 @@ class StoredViewController: UIViewController{
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
     
+     var soundPlayer : AVAudioPlayer!
+    var audioForLog: AVAudioFile?
+    var fileName:String = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +33,12 @@ class StoredViewController: UIViewController{
             dateLabel.text = "\(log?.date)"
             storedTextView.text = log?.textLog ?? ""
             subjectLabel.text = log?.subjectLine ?? "no subject"
+            
+            if let uiud = log?.audioUIUD{
+             fileName = "\(uiud) +.m4a"
+            }
+            
+            
             
             
             
@@ -42,7 +51,6 @@ class StoredViewController: UIViewController{
     
     
     
-    
     @IBAction func storedPlayButton(_ sender: Any) {
     }
     
@@ -51,6 +59,8 @@ class StoredViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        preparePlayer()
+        soundPlayer.play()
     }
     
     
@@ -58,6 +68,33 @@ class StoredViewController: UIViewController{
         super.didReceiveMemoryWarning()
     }
 
+    
+    //audiowork
+    
+
+    func preparePlayer(){
+        soundPlayer = try! AVAudioPlayer(contentsOf: getFileUrl())
+        soundPlayer.delegate = self as! AVAudioPlayerDelegate
+        soundPlayer.prepareToPlay()
+        soundPlayer.volume = 1.0
+    }
+    
+    func getFileUrl() -> URL{
+        var url = URL(string: getCacheDirectory())!
+        url = url.appendingPathComponent(fileName)
+        return url
+    }
+    
+    func getCacheDirectory() -> String{
+        let paths=NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        return paths[0]
+    }
+
+    @IBAction func changeAudioTime(_ sender: Any) {
+        let value = storedAudioSlider.value
+        
+        
+    }
 
     
 }

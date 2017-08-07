@@ -69,7 +69,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
                 let filename = "\(uiud) + .m4a"
                 soundRecorder.stop()
                 let recording = try? AVAudioFile(forReading: getFileUrl())
-                CoreDataHelper.addLog(text: logTextView.text, id: filename, subject: "subjectest")
+                CoreDataHelper.addLog(text: logTextView.text, id: uiud, subject: "subjectest")
                 let stuff = CoreDataHelper.getContents()
                 
             }
