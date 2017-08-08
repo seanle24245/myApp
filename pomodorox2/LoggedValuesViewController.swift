@@ -97,6 +97,7 @@ extension LoggedValuesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Stored", bundle: nil).instantiateInitialViewController() as! StoredViewController
         vc.log = self.logs[indexPath.row]
+        print(logs[indexPath.row].audioUIUD)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

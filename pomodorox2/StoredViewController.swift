@@ -12,7 +12,7 @@ import AVFoundation
 import AudioToolbox
 
 
-class StoredViewController: UIViewController{
+class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDelegate{
     
     var log: Log?
     @IBOutlet weak var storedAudioSlider: UISlider!
@@ -21,46 +21,95 @@ class StoredViewController: UIViewController{
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
     
-     var soundPlayer : AVAudioPlayer!
+    var soundPlayer : AVAudioPlayer?
     var audioForLog: AVAudioFile?
-    var fileName:String = ""
+    var fileName:String?
+    var isPlaying: Bool = false
+    var minutesToDisplay:Int=0
+    var secondsToDisplay:Int=0
+    var timer:Timer=Timer()
+    var totalSeconds: Int = 0
+    var timeOfAudio: TimeInterval?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // 1
-        if let note = log {
+        
             // 2
-            dateLabel.text = "\(log?.date)"
+            dateLabel.text = "\(String(describing: log?.date!))"
             storedTextView.text = log?.textLog ?? ""
             subjectLabel.text = log?.subjectLine ?? "no subject"
             
-            if let uiud = log?.audioUIUD{
-             fileName = "\(uiud) +.m4a"
-            }
+           
             
             
             
             
-            
-        } else {
-            // 3
-            
-        }
+        
     }
 
     
     
     
     @IBAction func storedPlayButton(_ sender: Any) {
+        
+        preparePlayer()
+        if isPlaying == false{
+            soundPlayer?.play()
+            isPlaying = true
+        }
+        else{
+            soundPlayer?.play(atTime: timeOfAudio!)
+            isPlaying = true
+        }
+        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(StoredViewController.updateTimer)), userInfo: nil, repeats: true)
+        
+        
+        
     }
     
+    func updateTimer(){
+        totalSeconds += 1
+        secondsToDisplay=totalSeconds%60
+        minutesToDisplay=totalSeconds/60
+        
+        if totalSeconds >= Int((soundPlayer?.duration)!)+1{
+            timer.invalidate()
+            soundPlayer?.stop()
+            isPlaying = false
+        }
+        
+        if secondsToDisplay<10{
+            storedTimeLabel.text="\(minutesToDisplay)" + ":" + "0"+"\(secondsToDisplay)"
+        }
+        else{
+            storedTimeLabel.text="\(minutesToDisplay)"+":"+"\(secondsToDisplay)"
+        }
+        
+        
+        let toIncrementProgress:Float=1/(Float)((soundPlayer?.duration)!)
+        storedAudioSlider.value+=toIncrementProgress
+        
+        
+    }
+
+    
+    
+    
     @IBAction func storedPauseButton(_ sender: Any) {
+        timer.invalidate()
+        timeOfAudio = soundPlayer?.currentTime
+        soundPlayer?.pause()
+        isPlaying = false
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        preparePlayer()
-        soundPlayer.play()
+        fileName = "\(log!.audioUIUD!).m4a"
+        print(fileName)
+        
+        // Do any addit\ional setup after loading the view.
+        
     }
     
     
@@ -74,14 +123,14 @@ class StoredViewController: UIViewController{
 
     func preparePlayer(){
         soundPlayer = try! AVAudioPlayer(contentsOf: getFileUrl())
-        soundPlayer.delegate = self as! AVAudioPlayerDelegate
-        soundPlayer.prepareToPlay()
-        soundPlayer.volume = 1.0
+        soundPlayer?.delegate = self as! AVAudioPlayerDelegate
+        soundPlayer?.prepareToPlay()
+        soundPlayer?.volume = 1.0
     }
     
     func getFileUrl() -> URL{
         var url = URL(string: getCacheDirectory())!
-        url = url.appendingPathComponent(fileName)
+        url = url.appendingPathComponent(fileName!)
         return url
     }
     
@@ -94,6 +143,9 @@ class StoredViewController: UIViewController{
         let value = storedAudioSlider.value
         
         
+    }
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        print("done")
     }
 
     

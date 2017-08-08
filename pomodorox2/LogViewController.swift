@@ -39,7 +39,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     var soundRecorder : AVAudioRecorder!
     var soundPlayer : AVAudioPlayer!
     
-    let uiud:String = UUID().uuidString
+    var uiud:String = ""
     
     
     @IBAction func logStartButton(_ sender: Any) {
@@ -66,11 +66,13 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         minutesToDisplay=totalSeconds/60
         if totalSeconds==1 {
             if isRecording{
-                let filename = "\(uiud) + .m4a"
+                let filename = "\(uiud).m4a"
                 soundRecorder.stop()
                 let recording = try? AVAudioFile(forReading: getFileUrl())
-                CoreDataHelper.addLog(text: logTextView.text, id: uiud, subject: "subjectest")
-                let stuff = CoreDataHelper.getContents()
+                
+                print(uiud)
+                CoreDataHelper.addLog(text: logTextView.text, idForIt: uiud, subject: "subjectest")
+            
                 
             }
             
@@ -97,6 +99,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        uiud = UUID().uuidString
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -154,9 +157,13 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     }
     
     func getFileUrl() -> URL{
-        let filename = "\(uiud) + .m4a"
+        
+        let filename = "\(uiud).m4a"
+        
         var url = URL(string: getCacheDirectory())!
         url = url.appendingPathComponent(filename)
+        print(filename)
+        print(url)
         return url
     }
     

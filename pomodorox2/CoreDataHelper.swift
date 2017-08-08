@@ -22,7 +22,7 @@ class CoreDataHelper {
     
     
     
-    static func addLog(text:String?, id: String?, subject: String?){
+    static func addLog(text:String?, idForIt: String?, subject: String?){
         
         let dateToLog = Date()
         
@@ -33,7 +33,7 @@ class CoreDataHelper {
         //newLog.setValue("text", forKey: "textLog")
         //newLog.setValue("subject", forKey: "subjectLine")
         
-        newLog.audioUIUD = id
+        newLog.audioUIUD = idForIt
         newLog.subjectLine = subject
         newLog.date = dateToLog as NSDate
         newLog.textLog = text
