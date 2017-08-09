@@ -28,7 +28,7 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
     var minutesToDisplay:Int=0
     var secondsToDisplay:Int=0
     var timer:Timer=Timer()
-    var totalSeconds: Int = 0
+    var totalSeconds: Double = 0.00
     var timeOfAudio: TimeInterval?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +39,8 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
             dateLabel.text = "\(String(describing: log?.date!))"
             storedTextView.text = log?.textLog ?? ""
             subjectLabel.text = log?.subjectLine ?? "no subject"
-            
+        
+        preparePlayer()
            
             
             
@@ -53,7 +54,7 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
     
     @IBAction func storedPlayButton(_ sender: Any) {
         
-        preparePlayer()
+        storedAudioSlider.isEnabled = false
         if isPlaying == false{
             soundPlayer?.play()
             isPlaying = true
@@ -62,24 +63,32 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
             soundPlayer?.play(atTime: timeOfAudio!)
             isPlaying = true
         }
-        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(StoredViewController.updateTimer)), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: (#selector(StoredViewController.updateTimer)), userInfo: nil, repeats: true)
         
+        if timeOfAudio == soundPlayer?.duration{
+            timeOfAudio = 0.00
+            soundPlayer?.currentTime = 0.00
+        }
+        
+       
         
         
     }
     
     func updateTimer(){
-        totalSeconds += 1
-        secondsToDisplay=totalSeconds%60
-        minutesToDisplay=totalSeconds/60
+        totalSeconds += 0.001
         
-        if totalSeconds >= Int((soundPlayer?.duration)!)+1{
+        secondsToDisplay=Int(totalSeconds) % 60
+        minutesToDisplay=Int(totalSeconds/60)
+        
+        if totalSeconds >= (soundPlayer?.duration)!{
             timer.invalidate()
             soundPlayer?.stop()
             isPlaying = false
         }
         
         if secondsToDisplay<10{
+            
             storedTimeLabel.text="\(minutesToDisplay)" + ":" + "0"+"\(secondsToDisplay)"
         }
         else{
@@ -87,9 +96,13 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
         }
         
         
-        let toIncrementProgress:Float=1/(Float)((soundPlayer?.duration)!)
+        let toIncrementProgress:Float=1/(Float)((((soundPlayer?.duration)! * 1000)))
         storedAudioSlider.value+=toIncrementProgress
+        timeOfAudio = soundPlayer?.currentTime
         
+        
+         print("time is \(timeOfAudio)")
+        print("duration is \(soundPlayer?.duration)")
         
     }
 
@@ -99,9 +112,10 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
     @IBAction func storedPauseButton(_ sender: Any) {
         timer.invalidate()
         timeOfAudio = soundPlayer?.currentTime
+        print(timeOfAudio)
         soundPlayer?.pause()
         isPlaying = false
-        
+        storedAudioSlider.isEnabled = true
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,14 +153,44 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
         return paths[0]
     }
 
-    @IBAction func changeAudioTime(_ sender: Any) {
-        let value = storedAudioSlider.value
+    @IBAction func changeAudioTime(_ sender: UISlider) {
+        if isPlaying == true{
+            sender.isEnabled = false
+        }
+        
+        
+        if isPlaying == false{
+        sender.isEnabled = true
+        soundPlayer?.pause()
+        let value = Double(storedAudioSlider.value)
+        let audioLength = soundPlayer?.duration
+        
+        
+        let correspondingTime = audioLength! * value
+       
+        timeOfAudio = correspondingTime
+        totalSeconds = correspondingTime
+        secondsToDisplay=Int(totalSeconds) % 60
+        minutesToDisplay=Int(totalSeconds/60)
+        if secondsToDisplay<10{
+            storedTimeLabel.text="\(minutesToDisplay)" + ":" + "0"+"\(secondsToDisplay)"
+        }
+        else{
+            storedTimeLabel.text="\(minutesToDisplay)"+":"+"\(secondsToDisplay)"
+        }
+
+        
+        
+        
+        soundPlayer?.play(atTime: timeOfAudio!)
+        
+        }
         
         
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("done")
-    }
+        
+        }
 
     
 }
