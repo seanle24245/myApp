@@ -23,6 +23,7 @@
 		AC31D6081F30D994009674CD /* log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC31D6061F30D994009674CD /* log.xcdatamodeld */; };
 		AC31D60B1F3100CA009674CD /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D60A1F3100CA009674CD /* CoreDataHelper.swift */; };
 		AC31D60D1F335619009674CD /* StoredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D60C1F335619009674CD /* StoredViewController.swift */; };
+		AC80FFF51F3CDD3900C6EDE4 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80FFF41F3CDD3900C6EDE4 /* NavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		AC31D6071F30D994009674CD /* log.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = log.xcdatamodel; sourceTree = "<group>"; };
 		AC31D60A1F3100CA009674CD /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		AC31D60C1F335619009674CD /* StoredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredViewController.swift; sourceTree = "<group>"; };
+		AC80FFF41F3CDD3900C6EDE4 /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				AC31D5FD1F2FA91F009674CD /* RestViewController.swift */,
 				AC31D6011F2FCE22009674CD /* LoggedValuesViewController.swift */,
 				AC31D60C1F335619009674CD /* StoredViewController.swift */,
+				AC80FFF41F3CDD3900C6EDE4 /* NavController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				AC29F4231F20E621001E9658 /* ViewController.swift in Sources */,
 				AC31D5FC1F2D07F7009674CD /* LogViewController.swift in Sources */,
 				AC31D6021F2FCE22009674CD /* LoggedValuesViewController.swift in Sources */,
+				AC80FFF51F3CDD3900C6EDE4 /* NavController.swift in Sources */,
 				AC31D5F91F2BB38D009674CD /* FocusViewController.swift in Sources */,
 				AC29F4211F20E621001E9658 /* AppDelegate.swift in Sources */,
 				AC31D6081F30D994009674CD /* log.xcdatamodeld in Sources */,

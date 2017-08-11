@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AudioToolbox
+import CoreGraphics
 class RestViewController: UIViewController {
     
     var timer:Timer=Timer()
@@ -67,10 +68,17 @@ class RestViewController: UIViewController {
         
     }
     
+    private func didFinish() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(FocusViewController.updateTimer)), userInfo: nil, repeats: true)
         timerIsOn=true
+        
+        let tint = UIColor(red: 254/255 , green: 100/255, blue: 25/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = tint
     }
     
     override func didReceiveMemoryWarning(){
