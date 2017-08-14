@@ -23,8 +23,8 @@ import AVFoundation
 class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDelegate {
     
     var timer:Timer=Timer()
-    var totalSeconds:Int=10
-    var initialTime:Int=10
+    var totalSeconds:Int=2
+    var initialTime:Int=2
     var timerIsOn:Bool=false
     var minutesToDisplay:Int=0
     var secondsToDisplay:Int=0
@@ -99,6 +99,8 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        logTextView.layer.borderWidth = 1
+        logTextView.layer.borderColor = UIColor.black.cgColor
         uiud = UUID().uuidString
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext

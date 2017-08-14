@@ -10,8 +10,11 @@ import UIKit
 
 class NavController: UINavigationController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("cuh")
 
         // Do any additional setup after loading the view.
     }

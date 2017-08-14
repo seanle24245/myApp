@@ -20,6 +20,7 @@ class FocusViewController: UIViewController {
     @IBOutlet weak var focusTimeLabel: UILabel!
     @IBOutlet weak var focusProgressBar: UIProgressView!
     
+    @IBOutlet weak var roundLabel: UILabel!
     @IBAction func startButton(_ sender: Any) {
         
         if timerIsOn == false{
@@ -60,7 +61,20 @@ class FocusViewController: UIViewController {
 
 override func viewDidLoad() {
     super.viewDidLoad()
+    
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        roundLabel.text = "\(RoundTracker.numberOfRounds % 4)/4 "
+        let tint = UIColor(red: 25/255 , green: 181/255, blue: 254/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = tint
+        focusTimeLabel.text = "25:00"
+        print(totalSeconds)
+        
+    }
+    
     
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()

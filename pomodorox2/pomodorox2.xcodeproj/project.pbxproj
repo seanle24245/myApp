@@ -24,6 +24,7 @@
 		AC31D60B1F3100CA009674CD /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D60A1F3100CA009674CD /* CoreDataHelper.swift */; };
 		AC31D60D1F335619009674CD /* StoredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D60C1F335619009674CD /* StoredViewController.swift */; };
 		AC80FFF51F3CDD3900C6EDE4 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80FFF41F3CDD3900C6EDE4 /* NavController.swift */; };
+		AC80FFF71F3E3A4F00C6EDE4 /* RoundTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80FFF61F3E3A4F00C6EDE4 /* RoundTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		AC31D60A1F3100CA009674CD /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		AC31D60C1F335619009674CD /* StoredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredViewController.swift; sourceTree = "<group>"; };
 		AC80FFF41F3CDD3900C6EDE4 /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
+		AC80FFF61F3E3A4F00C6EDE4 /* RoundTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				AC31D6061F30D994009674CD /* log.xcdatamodeld */,
+				AC80FFF61F3E3A4F00C6EDE4 /* RoundTracker.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC31D60B1F3100CA009674CD /* CoreDataHelper.swift in Sources */,
+				AC80FFF71F3E3A4F00C6EDE4 /* RoundTracker.swift in Sources */,
 				AC31D60D1F335619009674CD /* StoredViewController.swift in Sources */,
 				AC29F4231F20E621001E9658 /* ViewController.swift in Sources */,
 				AC31D5FC1F2D07F7009674CD /* LogViewController.swift in Sources */,

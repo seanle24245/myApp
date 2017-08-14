@@ -13,8 +13,8 @@ import CoreGraphics
 class RestViewController: UIViewController {
     
     var timer:Timer=Timer()
-    var totalSeconds:Int=10
-    var initialTime:Int=10
+    var totalSeconds:Int=2
+    var initialTime:Int=2
     var timerIsOn:Bool=false
     var minutesToDisplay:Int=0
     var secondsToDisplay:Int=0
@@ -26,6 +26,7 @@ class RestViewController: UIViewController {
     @IBOutlet weak var restProgressBar: UIProgressView!
     
     
+    @IBOutlet weak var roundLabel: UILabel!
    
     
     @IBAction func startButton(_ sender: Any) {
@@ -59,6 +60,7 @@ class RestViewController: UIViewController {
         if totalSeconds==0{
             timer.invalidate()
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+            navigationController?.popToRootViewController(animated: true)
             
         }
         
@@ -74,6 +76,7 @@ class RestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundLabel.text = "\(RoundTracker.numberOfRounds%4)/4 "
         timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(FocusViewController.updateTimer)), userInfo: nil, repeats: true)
         timerIsOn=true
         
@@ -83,6 +86,10 @@ class RestViewController: UIViewController {
     
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+       RoundTracker.numberOfRounds += 1
     }
     
     
