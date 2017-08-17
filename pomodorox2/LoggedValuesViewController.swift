@@ -14,6 +14,7 @@ class LoggedValuesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var logs = [Log]() {
         didSet {
+            logs.reverse()
             tableView.reloadData()
         }
     }
@@ -24,6 +25,9 @@ class LoggedValuesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tint = UIColor(red: 25/255 , green: 181/255, blue: 254/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = tint
+
         logs = CoreDataHelper.getContents()
         // Do any additional setup after loading the view.
    
@@ -66,8 +70,36 @@ extension LoggedValuesViewController: UITableViewDataSource {
         }
         
         
-        let timeOfLog = logForCell.date
-        cell.timeLabel.text = "\(timeOfLog)"
+        let date:Date = (logForCell.date)! as Date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM-dd-yyyy"
+        var formattedDate = dateFormatter.string(from: date)
+        
+        
+        
+        
+        let calendar = Calendar.current
+        
+        var hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        var amOrPm = ""
+        if hour > 12{
+            hour -= 12
+             amOrPm = "PM"
+        }else{
+            amOrPm = "AM"
+        }
+        var minutesToDisplay = ""
+        
+        if minutes < 10 {
+            minutesToDisplay = "0\(minutes)"
+        }else{
+            minutesToDisplay = "\(minutes)"
+        }
+        
+        cell.timeLabel.text = "\(formattedDate)   \(hour):\(minutesToDisplay) \(amOrPm)"
+        
+        
         
         return cell
         

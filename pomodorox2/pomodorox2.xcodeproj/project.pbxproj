@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AC1823001F38B49A009E1BC9 /* Stored.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1822FE1F38B49A009E1BC9 /* Stored.storyboard */; };
 		AC29F4211F20E621001E9658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4201F20E621001E9658 /* AppDelegate.swift */; };
-		AC29F4231F20E621001E9658 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29F4221F20E621001E9658 /* ViewController.swift */; };
 		AC29F4261F20E621001E9658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29F4241F20E621001E9658 /* Main.storyboard */; };
 		AC29F4281F20E621001E9658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC29F4271F20E621001E9658 /* Assets.xcassets */; };
 		AC29F42B1F20E621001E9658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29F4291F20E621001E9658 /* LaunchScreen.storyboard */; };
@@ -25,6 +24,8 @@
 		AC31D60D1F335619009674CD /* StoredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31D60C1F335619009674CD /* StoredViewController.swift */; };
 		AC80FFF51F3CDD3900C6EDE4 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80FFF41F3CDD3900C6EDE4 /* NavController.swift */; };
 		AC80FFF71F3E3A4F00C6EDE4 /* RoundTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80FFF61F3E3A4F00C6EDE4 /* RoundTracker.swift */; };
+		AC80FFF91F42204900C6EDE4 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80FFF81F42204900C6EDE4 /* StartingViewController.swift */; };
+		AC80FFFB1F44850900C6EDE4 /* DateSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80FFFA1F44850900C6EDE4 /* DateSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,6 @@
 		AC1822FF1F38B49A009E1BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stored.storyboard; sourceTree = "<group>"; };
 		AC29F41D1F20E621001E9658 /* pomodorox2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomodorox2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC29F4201F20E621001E9658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC29F4221F20E621001E9658 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC29F4251F20E621001E9658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC29F4271F20E621001E9658 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC29F42A1F20E621001E9658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		AC31D60C1F335619009674CD /* StoredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredViewController.swift; sourceTree = "<group>"; };
 		AC80FFF41F3CDD3900C6EDE4 /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		AC80FFF61F3E3A4F00C6EDE4 /* RoundTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTracker.swift; sourceTree = "<group>"; };
+		AC80FFF81F42204900C6EDE4 /* StartingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
+		AC80FFFA1F44850900C6EDE4 /* DateSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				AC29F4201F20E621001E9658 /* AppDelegate.swift */,
-				AC29F4221F20E621001E9658 /* ViewController.swift */,
 				AC29F4241F20E621001E9658 /* Main.storyboard */,
 				AC1822FE1F38B49A009E1BC9 /* Stored.storyboard */,
 				AC29F4271F20E621001E9658 /* Assets.xcassets */,
@@ -157,6 +158,7 @@
 			children = (
 				AC31D6061F30D994009674CD /* log.xcdatamodeld */,
 				AC80FFF61F3E3A4F00C6EDE4 /* RoundTracker.swift */,
+				AC80FFFA1F44850900C6EDE4 /* DateSetup.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -170,6 +172,7 @@
 				AC31D6011F2FCE22009674CD /* LoggedValuesViewController.swift */,
 				AC31D60C1F335619009674CD /* StoredViewController.swift */,
 				AC80FFF41F3CDD3900C6EDE4 /* NavController.swift */,
+				AC80FFF81F42204900C6EDE4 /* StartingViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -328,9 +331,10 @@
 			files = (
 				AC31D60B1F3100CA009674CD /* CoreDataHelper.swift in Sources */,
 				AC80FFF71F3E3A4F00C6EDE4 /* RoundTracker.swift in Sources */,
+				AC80FFF91F42204900C6EDE4 /* StartingViewController.swift in Sources */,
 				AC31D60D1F335619009674CD /* StoredViewController.swift in Sources */,
-				AC29F4231F20E621001E9658 /* ViewController.swift in Sources */,
 				AC31D5FC1F2D07F7009674CD /* LogViewController.swift in Sources */,
+				AC80FFFB1F44850900C6EDE4 /* DateSetup.swift in Sources */,
 				AC31D6021F2FCE22009674CD /* LoggedValuesViewController.swift in Sources */,
 				AC80FFF51F3CDD3900C6EDE4 /* NavController.swift in Sources */,
 				AC31D5F91F2BB38D009674CD /* FocusViewController.swift in Sources */,

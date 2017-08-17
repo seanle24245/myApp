@@ -20,6 +20,9 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
     @IBOutlet weak var storedTimeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
+    
     
     var soundPlayer : AVAudioPlayer?
     var audioForLog: AVAudioFile?
@@ -33,17 +36,45 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         super.viewWillAppear(animated)
         // 1
         
             // 2
-            dateLabel.text = "\(String(describing: log?.date!))"
-            storedTextView.text = log?.textLog ?? ""
+        let date:Date = (log!.date)! as Date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM-dd-yyyy"
+        var formattedDate = dateFormatter.string(from: date)
+        
+        
+        
+        
+        let calendar = Calendar.current
+        
+        var hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        var amOrPm = ""
+        if hour > 12{
+            hour -= 12
+            amOrPm = "PM"
+        }else{
+            amOrPm = "AM"
+        }
+        
+        
+        dateLabel.text = "\(formattedDate) \(hour):\(minutes) \(amOrPm)"
+        storedTextView.text = log?.textLog ?? ";"
             subjectLabel.text = log?.subjectLine ?? "no subject"
             storedAudioSlider.isEnabled = false
         
-        preparePlayer()
-           
+            preparePlayer()
+        
+        if soundPlayer?.duration == 0.0{
+            playButton.isEnabled = false
+            pauseButton.isEnabled = false
+            storedTimeLabel.text = "0:00"
+        }
             
             
             
@@ -120,7 +151,23 @@ class StoredViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecord
         fileName = "\(log!.audioUIUD!).m4a"
         print(fileName)
         
+        
+        
+        
+        
         // Do any addit\ional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        fileName = "\(log!.audioUIUD!).m4a"
+        print(fileName)
+        storedTextView.layer.borderWidth = 1
+        storedTextView.layer.borderColor = UIColor.black.cgColor
+       
+        
+        
         
     }
     

@@ -23,15 +23,18 @@ import AVFoundation
 class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDelegate {
     
     var timer:Timer=Timer()
-    var totalSeconds:Int=2
-    var initialTime:Int=2
+    var totalSeconds:Int=180
+    var initialTime:Int=180
     var timerIsOn:Bool=false
     var minutesToDisplay:Int=0
     var secondsToDisplay:Int=0
     var isRecording:Bool=false
+    var recordHasBeenTapped = false
     @IBOutlet weak var logTimeLabel: UILabel!
     @IBOutlet weak var logProgressBar: UIProgressView!
     
+    @IBOutlet weak var subjectTextField: UITextField!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var logTextView: UITextView!
     @IBOutlet weak var logRecordButton: UIButton!
     
@@ -41,6 +44,7 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     
     var uiud:String = ""
     
+    var focusVC: UIViewController!
     
     @IBAction func logStartButton(_ sender: Any) {
         if timerIsOn == false{
@@ -54,8 +58,15 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         
     @IBAction func logPauseButton(_ sender: Any) {
         timer.invalidate()
-        logTimeLabel.text="\(minutesToDisplay)"+":"+"\(secondsToDisplay)"
+        if secondsToDisplay<10{
+            logTimeLabel.text="\(minutesToDisplay)" + ":" + "0"+"\(secondsToDisplay)"
+        }
+        else{
+            logTimeLabel.text="\(minutesToDisplay)"+":"+"\(secondsToDisplay)"
+        }
+        
         timerIsOn=false
+
     }
 
     
@@ -65,16 +76,27 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         secondsToDisplay=totalSeconds%60
         minutesToDisplay=totalSeconds/60
         if totalSeconds==1 {
-            if isRecording{
+            
+            
                 let filename = "\(uiud).m4a"
                 soundRecorder.stop()
-                let recording = try? AVAudioFile(forReading: getFileUrl())
-                
-                print(uiud)
-                CoreDataHelper.addLog(text: logTextView.text, idForIt: uiud, subject: "subjectest")
             
                 
+                print(uiud)
+                var subjectOfSession: String = subjectTextField.text!
+            if subjectOfSession.characters.count == 0 {
+                subjectOfSession = "no subject"
             }
+            
+            
+            if logTextView.text.characters.count > 0 || recordHasBeenTapped{
+                CoreDataHelper.addLog(text: logTextView.text, idForIt: uiud, subject: subjectOfSession)
+            }
+        
+            
+            
+            
+                
             
             
         }
@@ -108,6 +130,19 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
         timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(FocusViewController.updateTimer)), userInfo: nil, repeats: true)
         timerIsOn=true
         setUpRecorder()
+        navigationItem.hidesBackButton = true
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM-dd"
+        var formattedDate = dateFormatter.string(from: DateSetup.screenDate)
+        dateLabel.text = formattedDate
+
+        
+        
+        
+       
+        
     }
     
     override func didReceiveMemoryWarning(){
@@ -170,14 +205,17 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     }
     
     @IBAction func recordAudio(_ sender: UIButton) {
+        recordHasBeenTapped = true
         if sender.titleLabel?.text == "Record" {
             
             soundRecorder.record()
             isRecording=true
             sender.setTitle("Stop", for:.normal)
+            logRecordButton.setImage(UIImage(named: "StopButton.png"), for: .normal)
             logRecordButton.isEnabled=true
         }
         else{
+            logRecordButton.setImage(UIImage(named: "BlueRecordButton.png"), for: .normal)
             soundRecorder.stop()
             sender.setTitle("Record", for:.normal)
             logRecordButton.isEnabled=false
@@ -216,6 +254,12 @@ class LogViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderD
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         logRecordButton.isEnabled=true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        let nextVC = segue.destination as! RestViewController
+        nextVC.focusVC = focusVC
     }
     
 }
